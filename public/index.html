@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Weather Forecast</h1>
+
+    <form id="search-form" class="search" autocomplete="off">
+      <input id="city-input" type="text" placeholder="Search a city, e.g. Delhi" maxlength="100" required aria-label="City name">
+      <button type="submit">Search</button>
+    </form>
+
+    <p id="message" class="message" role="status" hidden></p>
+
+    <section id="current" class="card" hidden>
+      <div class="current-top">
+        <div>
+          <h2 id="c-city"></h2>
+          <p id="c-desc" class="desc"></p>
+        </div>
+        <img id="c-icon" alt="" width="80" height="80">
+      </div>
+      <p class="temp"><span id="c-temp"></span>°C</p>
+      <ul class="stats">
+        <li><span>Feels like</span><strong id="c-feels"></strong></li>
+        <li><span>Humidity</span><strong id="c-humidity"></strong></li>
+        <li><span>Wind</span><strong id="c-wind"></strong></li>
+        <li><span>Pressure</span><strong id="c-pressure"></strong></li>
+      </ul>
+      <button id="fav-btn" class="secondary" type="button">☆ Save to favorites</button>
+    </section>
+
+    <section id="forecast" class="card" hidden>
+      <h3>5-day forecast</h3>
+      <div id="forecast-list" class="forecast"></div>
+    </section>
+
+    <div class="two-col">
+      <section class="card">
+        <h3>Favorites</h3>
+        <ul id="favorites" class="chips"></ul>
+        <p id="fav-empty" class="muted">No favorites yet.</p>
+      </section>
+      <section class="card">
+        <h3>Recent searches</h3>
+        <ul id="history" class="chips"></ul>
+        <p id="hist-empty" class="muted">No searches yet.</p>
+      </section>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
